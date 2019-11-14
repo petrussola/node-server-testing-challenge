@@ -4,7 +4,7 @@
   "description": "Node Server Testing Challenge",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watch --verbose"
+    "test": "cross-env DB_ENV=testing jest --watch --verbose"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/LambdaSchool/node-server-testing#readme",
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
   },
