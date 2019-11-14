@@ -1,7 +1,8 @@
 const db = require("../dbconfig");
 
 module.exports = {
-  insert
+  insert,
+  remove
 };
 
 function insert(car) {
@@ -13,5 +14,13 @@ function insert(car) {
 }
 
 function findById(id) {
-  return db("cars").where({ id }).first();
+  return db("cars")
+    .where({ id })
+    .first();
+}
+
+function remove(id) {
+  return db("cars")
+    .where({ id })
+    .del();
 }

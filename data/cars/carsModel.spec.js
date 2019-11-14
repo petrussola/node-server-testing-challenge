@@ -29,4 +29,11 @@ describe("cars model", () => {
       }
     });
   });
+  describe("delete()", () =>
+    it("deletes a car", async () => {
+      await Cars.insert({ make: "toyota" });
+      await Cars.remove(1);
+      cars = await db("cars");
+      expect(cars).toHaveLength(0);
+    }));
 });
