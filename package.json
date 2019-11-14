@@ -6,9 +6,6 @@
   "scripts": {
     "test": "jest --watch --verbose"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/node-server-testing.git"
