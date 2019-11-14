@@ -18,5 +18,14 @@ describe("cars model", () => {
       let car = await Cars.insert({ make: "toyota" });
       expect(car.make).toBe("toyota");
     });
+    it("should not post car with an existing make", async () => {
+      try {
+        await Cars.insert({ make: "toyota" });
+        await Cars.insert({ make: "toyota" });
+      } catch (error) {
+        console.log(error);
+        expect(error.code).toBe('SQLITE_CONSTRAINT');
+      }
+    });
   });
 });
