@@ -22,9 +22,10 @@ describe("cars model", () => {
       try {
         await Cars.insert({ make: "toyota" });
         await Cars.insert({ make: "toyota" });
+        const cars = await db("cars");
+        expect(cars).toHaveLength(2);
       } catch (error) {
-        console.log(error);
-        expect(error.code).toBe('SQLITE_CONSTRAINT');
+        expect(error.code).toBe("SQLITE_CONSTRAINT");
       }
     });
   });
